@@ -6,6 +6,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'image_cache'
 
-country_slug = ENV.fetch('EVERYPOLITICIAN_COUNTRY_SLUG')
-github_repo = ENV.fetch('GITHUB_REPO')
-ImageCache.cache!(country_slug, github_repo)
+begin
+  country_slug = ENV.fetch('EVERYPOLITICIAN_COUNTRY_SLUG')
+  github_repo = ENV.fetch('GITHUB_REPO')
+  ImageCache.cache!(country_slug, github_repo)
+rescue KeyError => e
+  abort "Missing required environment variables: #{e}"
+end
