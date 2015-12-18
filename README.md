@@ -27,6 +27,3 @@ On the Scheduler Dashboard add a new job which runs `bin/image_cache` once an ho
 You’re done! You can view the logs of the app using the following command, replacing `<app-name>` with the name of the app you created.
 
     heroku logs --tail --app <app-name>
-
-
-https://dashboard.heroku.com/apps/damp-citadel-8743/resources
