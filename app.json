@@ -13,7 +13,7 @@
       "description": "Slug of the country you'd like to cache images for. Full list here https://github.com/everypolitician/everypolitician-data/blob/master/countries.json"
     }
   },
-  "addsons": [
+  "addons": [
     "scheduler:standard"
   ]
 }
