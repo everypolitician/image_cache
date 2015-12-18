@@ -4,7 +4,7 @@ Cache images from EveryPolitician on GitHub pages' CDN.
 
 ## Deploying to Heroku
 
-First click this button and following the setup instructions:
+First click this button and follow the setup instructions:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
