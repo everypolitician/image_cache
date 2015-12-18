@@ -1,0 +1,17 @@
+{
+  "name": "Image cache",
+  "description": "Cache EveryPolitician images on GitHub pages",
+  "repository": "https://github.com/everypolitician/image_cache",
+  "env": {
+    "GITHUB_REPO": {
+      "description": "The existing GitHub repo you'd like the images pushed to"
+    },
+    "GITHUB_ACCESS_TOKEN": {
+      "description": "GitHub Access Token for pushing to GitHub - generate here https://github.com/settings/tokens"
+    },
+    "EVERYPOLITICIAN_COUNTRY_SLUG": {
+      "description": "Slug of the country you'd like to cache images for. Full list here https://github.com/everypolitician/everypolitician-data/blob/master/countries.json"
+    }
+  }
+}
+
