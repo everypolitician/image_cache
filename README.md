@@ -1,6 +1,6 @@
 # Image Cache
 
-Cache images from EveryPolitician on GitHub pages' CDN.
+Build a Github Pages cache of Politician images for a country from EveryPolitician data.
 
 ## Deploying to Heroku
 
