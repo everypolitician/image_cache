@@ -4,7 +4,7 @@
   "repository": "https://github.com/everypolitician/image_cache",
   "env": {
     "GITHUB_REPO": {
-      "description": "The existing GitHub repo you'd like the images pushed to"
+      "description": "The existing GitHub repo you'd like the images pushed to. e.g. everypolitician/zimbabwe-images"
     },
     "GITHUB_ACCESS_TOKEN": {
       "description": "GitHub Access Token for pushing to GitHub - generate here https://github.com/settings/tokens"
