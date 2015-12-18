@@ -6,8 +6,6 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'image_cache'
 
-if __FILE__ == $PROGRAM_NAME
-  country_slug = ENV.fetch('EVERYPOLITICIAN_COUNTRY_SLUG')
-  github_repo = ENV.fetch('GITHUB_REPO')
-  ImageCache.cache!(country_slug, github_repo)
-end
+country_slug = ENV.fetch('EVERYPOLITICIAN_COUNTRY_SLUG')
+github_repo = ENV.fetch('GITHUB_REPO')
+ImageCache.cache!(country_slug, github_repo)
