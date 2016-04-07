@@ -4,7 +4,7 @@ Build a Github Pages cache of Politician images for a country from EveryPolitici
 
 ## Disclaimer
 
-Images in EveryPolitician aren't necessarily free to use. You should check licensing etc before actively reusing them.
+Images referenced in EveryPolitician aren't necessarily free to use. You should check licensing etc before actively reusing them.
 
 ## Deploying to Heroku
 
