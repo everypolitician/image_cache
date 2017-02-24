@@ -12,8 +12,12 @@ First click this button and follow the setup instructions:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-You'll be able to choose a name for your new app. You'll also need to configure 3 settings:
+You'll be able to choose a name for your new app. You'll also need to configure 4 settings:
 
+- `IMAGE_SIZES` - This is a comma-separated list of the sizes of
+  images you want to be generated. For example, if you want
+  100x100 pixel thumbnails and the original versions, you should
+  use: `IMAGE_SIZES=100x100,original`
 - `GITHUB_REPO` - This should be the name of the repo you want to push the images to, in the form `user_or_org/repo_slug`.
 - `GITHUB_ACCESS_TOKEN` - A [Personal Access Token](https://github.com/settings/tokens) with permission to push to the `GITHUB_REPO`.
 - `EVERYPOLITICIAN_COUNTRY_SLUG` - The `slug` of the country you want to cache images for. Find slugs [in everypolitician-data's countries.json](https://github.com/everypolitician/everypolitician-data/blob/master/countries.json).

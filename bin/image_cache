@@ -6,10 +6,19 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'image_cache'
 
+def parse_image_sizes(sizes)
+  sizes.split(',').map do |s|
+    match = /^(original|\d+x\d+)$/.match(s)
+    raise RuntimeError, "Invalid size '#{s}' - it must be 'original' or WIDTHxHEIGHT" unless match
+    match[1]
+  end
+end
+
 begin
   country_slug = ENV.fetch('EVERYPOLITICIAN_COUNTRY_SLUG')
   github_repo = ENV.fetch('GITHUB_REPO')
-  ImageCache.cache!(country_slug, github_repo)
+  sizes = ENV.fetch('IMAGE_SIZES')
+  ImageCache.cache!(country_slug, github_repo, parse_image_sizes(sizes))
 rescue KeyError => e
   abort "Missing required environment variables: #{e}"
 end
