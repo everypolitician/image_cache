@@ -14,11 +14,29 @@ def parse_image_sizes(sizes)
   end
 end
 
+def parse_extra_csv(extra_csv_files)
+  # Assume that these look like:
+  #  Governors:http://example.com/governors.csv;Senate:http://example.com/senate.csv
+  # i.e. the data for each "house" is separated by a semi-colon, and
+  # each house is represented by the directory name, then a colon,
+  # then the CSV URL.
+  return {} unless extra_csv_files
+  extra_csv_files.split(';').map do |house_data|
+    md = /^(?<dir>.*?):(?<url>.*)$/.match(house_data)
+    md.names.zip(md.captures).to_h
+  end
+end
+
 begin
   country_slug = ENV.fetch('EVERYPOLITICIAN_COUNTRY_SLUG')
   github_repo = ENV.fetch('GITHUB_REPO')
   sizes = ENV.fetch('IMAGE_SIZES')
-  ImageCache.cache!(country_slug, github_repo, parse_image_sizes(sizes))
+  ImageCache.cache!(
+    country_slug,
+    github_repo,
+    parse_extra_csv(ENV['EXTRA_CSV']),
+    parse_image_sizes(sizes)
+  )
 rescue KeyError => e
   abort "Missing required environment variables: #{e}"
 end

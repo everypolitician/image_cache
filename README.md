@@ -22,6 +22,17 @@ You'll be able to choose a name for your new app. You'll also need to configure 
 - `GITHUB_ACCESS_TOKEN` - A [Personal Access Token](https://github.com/settings/tokens) with permission to push to the `GITHUB_REPO`.
 - `EVERYPOLITICIAN_COUNTRY_SLUG` - The `slug` of the country you want to cache images for. Find slugs [in everypolitician-data's countries.json](https://github.com/everypolitician/everypolitician-data/blob/master/countries.json).
 
+You may want to supplement the images found via EveryPolitician
+with others referenced by CSV files. In that case you can add the
+following optional environment variable too:
+
+- `EXTRA_CSV` - This is a semi-colon separated list of
+  `<DIRECTORY>:<CSV-URL>` specifiers. `<DIRECTORY>` is the name
+  of the directory in the target repository that the images will
+  be put in, and the `<CSV-URL>` should be the URL of a CSV file
+  that at least contains columns headed `id` and
+  `image_url`. For example, you could use: `EXTRA_CSV='Governors:http://example.com/governors.csv;Senate:http://example.com/senate.csv'`
+
 ![screen shot 2015-12-18 at 18 03 03](https://cloud.githubusercontent.com/assets/22996/11903508/ac08685e-a5b1-11e5-891e-9522ab1400c7.png)
 
 After the app has been created go to the Heroku Dashboard, select the newly created app and then click on the "Heroku Scheduler" add-on to get to the Scheduler Dashboard.
